@@ -83,23 +83,6 @@ def main():
     outfile.write("Seconds for Dijkstra Search: "+ str((time_taken).total_seconds()*1000) + " ms")
 
     #1/14/2021 ALL Output is still an issue. sending an empty list to the output file
-    #   SOLVED: 1/27/2021 Stackoverflow to correctly create the graph
-
-    # Return Approximated average clustering coefficient.
-    avgC= nx.average_clustering(G)
-    print('Average Clustering of this matrix is:', avgC)
-    outfile.write('Average Clustering of this matrix is:'+ str(avgC))
-
-    #Find communities in a graph using the Girvan–Newman method.
-    #RETURNS: Iterator over tuples of sets of nodes in G. Each set of node is a community, each tuple is a 
-    #sequence of communities at a particular level of the algorithm.
-
-    #2/3/2021 locate time complexity NOTES
-    comp = nc.girvan_newman(G)
-    for c in next(comp):
-        tuple(sorted(c))
-
-    print('Sequence of communities:\n',c)
-    outfile.write('Sequence of communities:\n'+ str(c))
+    #   SOLVED: 1/27/2021 Stackoverflow excerpt to correctly create the graph
 
 main()
